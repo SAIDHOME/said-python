@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "said-core"
+version = "0.0.1"
+description = "Reader and writer for the open .said memory format. Name reserved; the first release is coming."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+authors = [{ name = "SAIDHOME" }]
+
+[project.urls]
+Homepage = "https://asksaid.ai"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/said_core"]

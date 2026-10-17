@@ -6,12 +6,16 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: ${{ matrix.environment }}
     permissions:
       id-token: write
     strategy:
       matrix:
-        package: [asksaid, said-core]
+        include:
+          - package: asksaid
+            environment: pypi
+          - package: said-core
+            environment: pypi-said-core
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
